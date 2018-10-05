@@ -49,26 +49,26 @@ table {
 
 @font-face {
   font-family: 'Exo 2.0';
-  src: url("/fonts/Exo20-Thin.woff2") format("woff2"), url("/fonts/Exo20-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal; }
+  font-style: normal;
+  src: url("/fonts/Exo20-Thin.woff2") format("woff2"), url("/fonts/Exo20-Thin.woff") format("woff"); }
 
 .svg {
   display: block;
+  fill: currentColor;
   height: 1em;
-  stroke: currentColor;
-  fill: currentColor; }
+  stroke: currentColor; }
 
 html, body {
   margin: 0;
   padding: 0; }
 
 body {
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
   background-color: #000511;
   background-image: url("/img/bg_x1.png");
+  box-sizing: border-box;
   background-size: 70px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 10px;
@@ -85,8 +85,8 @@ body {
   position: relative;
   text-decoration: none; }
   .link:before {
-    bottom: 0;
     border-bottom: 1px dashed #1698d9;
+    bottom: 0;
     content: '';
     height: 1px;
     position: absolute;
@@ -113,11 +113,13 @@ body {
   position: relative; }
 
 .page__title {
+  box-sizing: border-box;
   color: #fff;
   font-family: 'Exo 2.0', Helvetica, Arial, sans-Serif;
   font-size: 36px;
   line-height: 48px;
   margin-bottom: 21px;
+  padding: 0 16px;
   text-align: center;
   width: 100%; }
 
@@ -128,8 +130,7 @@ body {
   width: 320px; }
   @media (min-width: 768px) {
     .cards {
-      justify-content: space-around;
-      width: 720px; } }
+      width: auto; } }
   @media (min-width: 1260px) {
     .cards {
       justify-content: space-between;
@@ -139,9 +140,15 @@ body {
   margin-bottom: 32px; }
   .cards__item:last-child {
     margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .cards__item {
+      margin-left: 20px;
+      margin-right: 20px; } }
   @media (min-width: 1260px) {
     .cards__item {
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0; } }
 
 .card {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
