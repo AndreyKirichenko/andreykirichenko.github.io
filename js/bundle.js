@@ -10995,9 +10995,9 @@ function () {
     };
 
     this.onNativeKey = function (e) {
-      _this.native.blur();
-
       if (e.which === 13 || e.which === 32) {
+        _this.native.blur();
+
         _this.openList();
 
         e.preventDefault();
