@@ -11324,6 +11324,8 @@ function () {
 
       if (this.isDesktop) {
         this.native.focus();
+      } else {
+        this.native.blur();
       }
     }
   }, {
