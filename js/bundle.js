@@ -11281,7 +11281,7 @@ class Slider {
     this.updatePathPosition();
 
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('mousedown', SELECTORS.HANDLER, this.onMouseDown);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('touchstart', this.onMouseDown);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('touchstart', SELECTORS.HANDLER, this.onMouseDown);
   }
 
   countNewValue() {
