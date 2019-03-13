@@ -10545,6 +10545,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var SELECTORS = {
+  HEADER: '.header',
   BURGER: '.burger',
   LINK: '.nav__link',
   NAV: '.header__nav'
@@ -10571,18 +10572,42 @@ function () {
       _this.isActive = true;
 
       _this.animateWithDelay();
+
+      _this.initHeaderClickEvent();
+
+      _this.initKeyEvent();
     };
 
     this.disactivate = function () {
       _this.isActive = false;
 
       _this.animateWithDelay();
+
+      _this.detachHeaderClickEvent();
+
+      _this.detachKeyEvent();
     };
 
     this.burgerClick = function () {
-      _this.isActive = !_this.isActive;
+      if (_this.isActive) {
+        _this.disactivate();
+      } else {
+        _this.activate();
+      }
+    };
 
-      _this.animateWithDelay();
+    this.onHeaderClick = function (e) {
+      var closest = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).closest(SELECTORS.HEADER);
+
+      if (!closest.length && _this.isActive) {
+        _this.disactivate();
+      }
+    };
+
+    this.onKey = function (e) {
+      if (e.which === 27) {
+        _this.disactivate();
+      }
     };
 
     this.init();
@@ -10620,13 +10645,13 @@ function () {
     key: "initEvents",
     value: function initEvents() {
       this.initBurgerClickEvent();
-      this.initLiksFocusEvents();
+      this.initLinksFocusEvents();
     }
   }, {
     key: "detachEvents",
     value: function detachEvents() {
       this.detachBurgerClickEvent();
-      this.detachLinkFocusEvents();
+      this.detachLinksFocusEvents();
     }
   }, {
     key: "initBurgerClickEvent",
@@ -10634,8 +10659,18 @@ function () {
       this.burger.on('click', this.burgerClick);
     }
   }, {
-    key: "initLiksFocusEvents",
-    value: function initLiksFocusEvents() {
+    key: "initHeaderClickEvent",
+    value: function initHeaderClickEvent() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', this.onHeaderClick);
+    }
+  }, {
+    key: "initKeyEvent",
+    value: function initKeyEvent() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('keydown', this.onKey);
+    }
+  }, {
+    key: "initLinksFocusEvents",
+    value: function initLinksFocusEvents() {
       this.links.on('focus', this.activate);
       this.links.on('blur', this.disactivate);
     }
@@ -10645,10 +10680,20 @@ function () {
       this.burger.off('click', this.burgerClick);
     }
   }, {
-    key: "detachLinkFocusEvents",
-    value: function detachLinkFocusEvents() {
+    key: "detachHeaderClickEvent",
+    value: function detachHeaderClickEvent() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('click', this.onHeaderClick);
+    }
+  }, {
+    key: "detachLinksFocusEvents",
+    value: function detachLinksFocusEvents() {
       this.links.off('focus', this.activate);
       this.links.off('blur', this.disactivate);
+    }
+  }, {
+    key: "detachKeyEvent",
+    value: function detachKeyEvent() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('keydown', this.onKey);
     }
   }, {
     key: "animateWithDelay",
