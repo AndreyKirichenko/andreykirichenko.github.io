@@ -10796,9 +10796,7 @@ function () {
 
     this.onMouseDown = function (e) {
       scrollStart();
-
-      _this.userSelectDisable();
-
+      Scroll.userSelectDisable();
       _this.mouseStartY = (e.pageY || _this.mouseEndY) - _this.contentTranslateY;
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('mousemove', _this.mouseMove);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('mouseup', _this.onMouseUp);
@@ -10815,8 +10813,7 @@ function () {
 
       _this.moveContentByHandler();
 
-      _this.userSelectAnable();
-
+      Scroll.userSelectAnable();
       scrollEnd();
     };
 
@@ -10885,7 +10882,7 @@ function () {
       var translateY = this.contentTranslateY * this.ratio;
       this.handler.css('transform', "translateY(".concat(translateY, "px)"));
     }
-  }, {
+  }], [{
     key: "userSelectDisable",
     value: function userSelectDisable() {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').css('user-select', 'none');
@@ -11008,8 +11005,6 @@ function () {
     };
 
     this.onItemsKey = function (e) {
-      e.preventDefault();
-
       switch (e.which) {
         case 27:
           _this.closeList();
@@ -11058,11 +11053,13 @@ function () {
         case 13:
           _this.selectByCurrent();
 
+          e.preventDefault();
           break;
 
         case 32:
           _this.selectByCurrent();
 
+          e.preventDefault();
           break;
 
         default:
@@ -11393,9 +11390,44 @@ function () {
 
       _this.focus();
     });
+    this.input.on('focus', function () {
+      _this.isFocus = true;
+
+      _this.listenNative();
+    });
     this.input.on('blur', function () {
       _this.isFocus = false;
+
+      _this.detachNative();
     });
+
+    this.onNativeKey = function (e) {
+      switch (e.which) {
+        case 37:
+          _this.incrementValue(-1);
+
+          e.preventDefault();
+          break;
+
+        case 38:
+          _this.incrementValue(-1);
+
+          e.preventDefault();
+          break;
+
+        case 39:
+          _this.incrementValue(1);
+
+          e.preventDefault();
+          break;
+
+        case 40:
+          _this.incrementValue(1);
+
+          e.preventDefault();
+          break;
+      }
+    };
 
     this.onMouseDown = function () {
       _this.updatePathPosition();
@@ -11446,19 +11478,39 @@ function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('touchstart', SELECTORS.HANDLER, this.onMouseDown);
     }
   }, {
+    key: "listenNative",
+    value: function listenNative() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('keydown', this.onNativeKey);
+    }
+  }, {
+    key: "detachNative",
+    value: function detachNative() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('keydown', this.onNativeKey);
+    }
+  }, {
     key: "countNewValue",
     value: function countNewValue() {
       var pathAbsRange = this.pathEnd - this.pathStart;
       var mouseAbsRange = this.mouseEndX - this.pathStart;
       this.value = Math.round(mouseAbsRange / pathAbsRange * 100);
-
+      this.validateValue();
+      this.updateValue();
+    }
+  }, {
+    key: "incrementValue",
+    value: function incrementValue(delta) {
+      this.value += delta;
+      this.validateValue();
+      this.updateValue();
+    }
+  }, {
+    key: "validateValue",
+    value: function validateValue() {
       if (this.value < 0) {
         this.value = 0;
       } else if (this.value > 100) {
         this.value = 100;
       }
-
-      this.updateValue();
     }
   }, {
     key: "updateValue",
