@@ -10912,6 +10912,11 @@ class Select {
       this.select(value);
     };
 
+    this.onNativeChange = () => {
+      this.detachInput();
+      this.init();
+    };
+
     this.onNativeFocus = () => {
       this.listenNative();
     };
@@ -11026,6 +11031,14 @@ class Select {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', this.onInputClick);
     this.native.on('focus', this.onNativeFocus);
     this.native.on('blur', this.onNativeBlur);
+    this.native.on('change', this.onNativeChange);
+  }
+
+  detachInput() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('click', this.onInputClick);
+    this.native.off('focus', this.onNativeFocus);
+    this.native.off('blur', this.onNativeBlur);
+    this.native.off('change', this.onNativeChange);
   }
   
   listenNative() {
