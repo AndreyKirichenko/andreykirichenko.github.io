@@ -11324,19 +11324,13 @@ function () {
       this.closeList();
       this.render();
 
-      if (this.isDesktop) {
+      if (window.outerWidth >= DESKTOP_BREAKPOINT) {
         this.native.focus();
       } else {
         setInterval(function () {
           _this4.native.blur();
         });
       }
-    }
-  }, {
-    key: "isDesktop",
-    value: function isDesktop() {
-      if (window.outerWidth >= DESKTOP_BREAKPOINT) return true;
-      return false;
     }
   }]);
 
