@@ -11310,6 +11310,8 @@ function () {
   }, {
     key: "select",
     value: function select(val) {
+      var _this4 = this;
+
       this.optionList = this.optionList.map(function (item) {
         return {
           disabled: item.disabled,
@@ -11325,7 +11327,9 @@ function () {
       if (this.isDesktop) {
         this.native.focus();
       } else {
-        this.native.blur();
+        setInterval(function () {
+          _this4.native.blur();
+        });
       }
     }
   }, {
