@@ -10619,27 +10619,22 @@ function () {
       var _this2 = this;
 
       var onResize = Object(_helpers_debounce__WEBPACK_IMPORTED_MODULE_1__["default"])(function () {
-        checkHeader();
+        _this2.checkHeader();
       }, 100, true);
-
-      var checkHeader = function checkHeader() {
-        _this2.isActive = false;
-
-        _this2.detachEvents();
-
-        _this2.nav.css('display', 'flex');
-
-        if (window.outerWidth < DESKTOP_BREAKPOINT) {
-          _this2.initEvents();
-
-          _this2.nav.hide();
-        }
-      };
-
       window.addEventListener('resize', function (event) {
         onResize('Event is:', event);
       });
-      checkHeader();
+      this.initEvents();
+      this.checkHeader();
+    }
+  }, {
+    key: "checkHeader",
+    value: function checkHeader() {
+      this.nav.css('display', 'flex');
+
+      if (window.outerWidth < DESKTOP_BREAKPOINT && !this.isActive) {
+        this.nav.hide();
+      }
     }
   }, {
     key: "initEvents",
