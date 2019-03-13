@@ -10571,7 +10571,7 @@ class Header {
     const checkHeader = () => {
       this.isActive = false;
       this.detachEvents();
-      this.nav.show();
+      this.nav.css('display', 'flex');
 
       if (window.outerWidth < DESKTOP_BREAKPOINT) {
         this.initEvents();
