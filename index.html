@@ -1,400 +1,76 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="Description" content="Andrey Kirichenko, front-end developer">
 
-  <link rel="shortcut icon" href="favicon/favicon.ico" />
-  <link rel="stylesheet" href="css/style.bundle.css?1" />
+    <meta name="keywords"
+          content="Andrey, Kirichenko, front-end, frontend, front, developer,
+                     JavaScript, React, Redux, Canvas, SCSS, Less, PostCss, HTML5" />
 
-  <script src="js/bundle.js?1" defer></script>
-  <title>1xBet</title>
-</head>
-<body>
-  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <symbol id="infographicsMediate" viewBox="0 0 102 6">
-        <circle r="3" cx="3" cy="3" fill="#bbb"></circle>
-        <circle r="3" cx="27" cy="3" fill="#bbb"></circle>
-        <circle r="3" cx="51" cy="3" fill="#bbb"></circle>
-        <circle r="3" cx="75" cy="3" fill="#bbb"></circle>
-        <circle r="3" cx="99" cy="3" fill="#bbb"></circle>
-      </symbol>
+    <title>Andrey Kirichenko, front-end developer</title>
 
-      <symbol id="burgerIcon" viewBox="0 0 20 25">
-        <g fill="currentColor" fill-rule="nonzero">
-          <path d="M0 0h20v2H0zM0 23h20v2H0zM0 11h20v2H0z"></path>
-        </g>
-      </symbol>
-    </defs>
-  </svg>
+  <link rel="apple-touch-icon" sizes="57x57" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-icon-180x180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="react_webpack"><link rel="icon" type="image/png" sizes="32x32" href="icons-2afdecdd9e53c2064a0c1121b457c339/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="icons-2afdecdd9e53c2064a0c1121b457c339/favicon-16x16.png"><link rel="shortcut icon" href="icons-2afdecdd9e53c2064a0c1121b457c339/favicon.ico"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="react_webpack"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-320x460.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-640x920.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-640x1096.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-750x1294.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-1182x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-1242x2148.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-748x1024.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-768x1004.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-1496x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="icons-2afdecdd9e53c2064a0c1121b457c339/apple-touch-startup-image-1536x2008.png"><link href="app.css" rel="stylesheet"></head>
 
-  <header class="header section">
-    <div class="header__container section__container ">
-      <a class="header__logo logo" href="/">
-        <div>
-          <span class="logo__part">LoremIpsum.</span>
-          <span class="logo__part logo__part--2">Net</span>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="porthole"></div>
+    <div class="page">
+      <section class="page__section main">
+        <div class="page__content main__content">
+          <div class="main__info">
+            <h1 class="main__title">
+                  <span class="main__title-main-text">
+                    Andrey Kirichenko
+                  </span>
+
+              <sup class="main__who-is">
+                Front-end developer
+              </sup>
+            </h1>
+
+            <h2>Technology stack:</h2>
+
+            <p>
+              JavaScript, React, Redux, Canvas, SCSS, Less, PostCss, HTML5, etc.
+            </p>
+
+            <h2>Contacts:</h2>
+
+            <ul class="contacts">
+              <li class="contacts__item">
+                <h3>Socials:</h3>
+
+                <p>
+                  <a href="https://github.com/AndreyKirichenko/isoflight" target="_blank">Github,</a>
+                  <a href="https://www.facebook.com/andrey.kirichenko.566" target="_blank">Facebook</a>
+                </p>
+              </li>
+
+              <li class="contacts__item">
+                <h3>Messenger:</h3>
+
+                <p>
+                  <a href="https://t.me/andreykirichenko" target="_blank">Telegram</a>
+                </p>
+              </li>
+
+              <li class="contacts__item">
+                <h3>Email:</h3>
+
+                <p>
+                  <a href="mailto:andrey.kirichenko999@gmail.com" target="_blank">andrey.kirichenko999@gmail.com</a>
+                </p>
+              </li>
+            </ul>
+
+          </div>
         </div>
-      </a>
-
-      <button class="header__burger burger" type="button" aria-controls="mainNav">
-        <svg class="burger__icon">
-          <use xlink:href="#burgerIcon"></use>
-        </svg>
-      </button>
-
-      <div class="header__nav header__nav--visible">
-        <nav class="nav" id="mainNav" role="menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a class="nav__link nav__link--active" href="/">
-                Бизнес
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a class="nav__link" href="/">
-                О&nbsp;нас
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a class="nav__link" href="/">
-                Цены
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a class="nav__link" href="#order">
-                Оформить заказ
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+      </section>
     </div>
-  </header>
-
-  <section class="showcase section">
-    <div class="showcase__container section__container">
-      <h1 class="title showcase__title">
-        <span class="title__highlighted">Lorem ipsum</span>
-        <br class="br br--mobile">
-        <span>dolor sit amet</span>
-        <br class="br br--mobile br--tablet br--desktop">
-        <span>consectetur</span>
-        <br class="br br--mobile">
-        <span class="title__highlighted">adipiscing</span>
-
-      </h1>
-
-      <div class="showcase__paragraph">
-        At&nbsp;vero eos et&nbsp;accusamus et&nbsp;iusto odio dignissimos ducimus!
-      </div>
-
-      <ul class="showcase__list">
-        <li class="showcase__item">
-          Totam rem aperiam eaque ipsa
-        </li>
-
-        <li class="showcase__item">
-          Sit voluptatem accusantium doloremque laudantium
-        </li>
-
-        <li class="showcase__item">
-          Sed ut&nbsp;perspiciatis, unde omnis iste natus error
-        </li>
-      </ul>
-
-      <div class="showcase__buttons">
-        <a class="button button--primary showcase__order" href="#order">
-          <span class="button__text">Заказать</span>
-        </a>
-
-        <a class="button showcase__more" href="/">
-          <span class="button__text">Подробнее</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="order" class="order section">
-    <div class="section__container">
-      <h1 class="title order__title">
-        <span class="">Оформление</span>
-        <span class="title__highlighted">Заказа</span>
-      </h1>
-
-      <div class="order__description">
-        Перед заполнением формы ознакомьтесь с&nbsp;нашей схемой работы!
-      </div>
-
-      <div class="order__infographic">
-        <ul class="infographic">
-          <li class="infographic__item">
-            <div class="infographicItem">
-              <div class="infographicItem__iconWrapper">
-                <div class="infographicItem__icon infographicItem__icon--loupe"></div>
-              </div>
-
-              <div class="infographicItem__text">
-                Lorem ipsum dolor
-                <br>
-                sit amet
-              </div>
-            </div>
-          </li>
-
-          <li class="infographic__item infographic__item--mediate infographic__item--mediate1">
-            <svg class="infographic__mediate">
-              <use xlink:href="#infographicsMediate"></use>
-            </svg>
-          </li>
-
-          <li class="infographic__item">
-            <div class="infographicItem">
-              <div class="infographicItem__iconWrapper">
-                <div class="infographicItem__icon infographicItem__icon--percent"></div>
-              </div>
-
-              <div class="infographicItem__text">
-                Сonsecteturadipiscing elit
-              </div>
-            </div>
-          </li>
-
-          <li class="infographic__item infographic__item--mediate infographic__item--mediate2">
-            <svg class="infographic__mediate">
-              <use xlink:href="#infographicsMediate"></use>
-            </svg>
-          </li>
-
-          <li class="infographic__item">
-            <div class="infographicItem">
-              <div class="infographicItem__iconWrapper">
-                <div class="infographicItem__icon infographicItem__icon--plus"></div>
-              </div>
-
-              <div class="infographicItem__text">
-                Sed do&nbsp;eiusmod tempor
-              </div>
-            </div>
-          </li>
-
-          <li class="infographic__item infographic__item--mediate infographic__item--mediate3">
-            <svg class="infographic__mediate">
-              <use xlink:href="#infographicsMediate"></use>
-            </svg>
-          </li>
-
-          <li class="infographic__item">
-            <div class="infographicItem">
-              <div class="infographicItem__iconWrapper">
-                <div class="infographicItem__icon infographicItem__icon--envelope"></div>
-              </div>
-
-              <div class="infographicItem__text">
-                Esse cillum dolore
-                <br>
-                eu&nbsp;fugiat
-              </div>
-            </div>
-          </li>
-
-          <li class="infographic__item infographic__item--mediate infographic__item--mediate4">
-            <svg class="infographic__mediate">
-              <use xlink:href="#infographicsMediate"></use>
-            </svg>
-          </li>
-
-          <li class="infographic__item">
-            <div class="infographicItem">
-              <div class="infographicItem__iconWrapper">
-                <div class="infographicItem__icon infographicItem__icon--bond"></div>
-              </div>
-
-              <div class="infographicItem__text">
-                Excepteur sint occaecat
-                <br>
-                cupidatat non proident
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <form action="/" class="order__form">
-        <div class="order__fieldGroup">
-          <div class="order__field">
-            <div class="field">
-              <div class="field__input">
-                <div class="select">
-                  <select class="select__native">
-                    <option value="0" disabled selected>Выберите тип системы</option>
-                    <option value="1">Sed ut perspiciatis</option>
-                    <option value="2">Nemo enim ipsam</option>
-                    <option value="3">Et harum quidem</option>
-                    <option value="4">Temporibus autem</option>
-                    <option value="5">Itaque earum rerum</option>
-                    <option value="6">Lorem ipsum</option>
-                    <option value="7">Perspiciatis enim</option>
-                    <option value="8">Et Nemo</option>
-                  </select>
-
-                  <div class="select__input">
-                    ...
-                  </div>
-
-                  <div class="select__dropDown">
-                    <div class="scroll">
-                      <div class="select__listWrapper scroll__wrapper">
-                        <ul class="select__list scroll__content">
-                          <!--<li class="select__item">Sed ut perspiciatis</li>-->
-                        </ul>
-                      </div>
-
-                      <div class="scroll__line">
-                        <div class="scroll__handler"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="field__message field__message--visible"></div>
-            </div>
-          </div>
-
-          <div class="order__field">
-            <div class="field">
-              <div class="field__input">
-                <input class="textInput" type="email" placeholder="Ваш e-mail" />
-              </div>
-
-              <div class="field__message"></div>
-            </div>
-          </div>
-
-          <div class="order__field">
-            <div class="field">
-              <div class="field__input">
-                <input class="textInput" type="text" placeholder="Ваше имя" />
-              </div>
-
-              <div class="field__message field__message--visible">
-                Поле не заполнено
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="order__fieldGroup">
-          <div class="order__field order__field--double">
-            <div class="slider">
-              <div class="slider__header">
-                <div class="slider__title">Sed ut&nbsp;perspiciatis, unde omnis iste natus</div>
-                <div class="slider__percent">100%</div>
-              </div>
-
-              <input name="slider" class="slider__native" type="number">
-
-              <div class="slider__line">
-                <div class="slider__handlerPath">
-                  <div class="slider__handler"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="order__field">
-            <div class="field">
-              <div class="field__input">
-                <div class="file">
-                  <input name="file" id="file" class="file__input" type="file" />
-                  <label class="file__label button button--fit button--big button--file" for="file">
-                    <span class="button--icon"></span>
-                    Прикрепить файл
-                  </label>
-                </div>
-
-              </div>
-
-              <div class="field__message"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="order__fieldGroup">
-          <div class="order__field order__field--submit">
-            <button class="button button--fit button--primary button--big order__submit" type="submit">
-              Отправить
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer section">
-    <ul class="section__container footer__list">
-      <li class="footer__item">
-        <div class="footer__text">
-          &copy;&nbsp;2019 &laquo;LOREMIPSUM.NET&raquo;
-          <br class="br br--mobile" />
-          Все права защищены.
-        </div>
-      </li>
-
-      <li class="footer__item">
-        <nav class="footer__wallets footerNav footerNav--dark">
-          <ul class="footerNav__list">
-            <li class="footerNav__item">
-              <a class="footerNav__link" href="/">
-                <span class="footerNav__icon footerNav__icon--qiwi"></span>
-                Qiwi wallet
-              </a>
-            </li>
-
-            <li class="footerNav__item">
-              <a class="footerNav__link" href="/">
-                <span class="footerNav__icon footerNav__icon--yandex"></span>
-                Yandex Money
-              </a>
-            </li>
-
-            <li class="footerNav__item">
-              <a class="footerNav__link" href="/">
-                <span class="footerNav__icon footerNav__icon--webmoney"></span>
-                Web Money
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </li>
-
-      <li class="footer__item">
-        <nav class="footer__contacts footerNav">
-          <ul class="footerNav__list">
-            <li class="footerNav__item">
-              <a class="footerNav__link" href="/">
-                <span class="footerNav__icon footerNav__icon--email"></span>
-                info@ipsum228.com
-              </a>
-            </li>
-
-            <li class="footerNav__item">
-              <a class="footerNav__link" href="/">
-                <span class="footerNav__icon footerNav__icon--vk"></span>
-                Мы вконтакте
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </li>
-    </ul>
-  </footer>
-</body>
+  <script type="text/javascript" src="index.js"></script></body>
 </html>
